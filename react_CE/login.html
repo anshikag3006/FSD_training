@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;   
+        }
+
+        body{
+            background-color: aqua;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background-color: whitesmoke;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+        }
+        label, input, button {
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+    <script>
+        function data(){
+            var a=document.getElementById("login").value;
+            var b=document.getElementById("pass").value;
+
+            if(a=="" || b==""){
+                alert("All fields are mandatory");
+            }
+            else if(a.length<3){
+                alert("Login should have atleast 3 values")
+            }
+            else if(a.includes("#") || a.includes("!") || a.includes("$") || a.includes("^") || a.includes("&") || a.includes("%")){
+                alert("Login should not contain special characters except _");
+            }
+            else if(b.length<8){
+                alert("Password should contain atleast 8 values")
+            }
+            else{
+                true;
+            }
+        }
+    </script>
+    <div class="form-container">
+        <form onsubmit="return data()" action="amountConverter.html">
+            <label for="Login">Login: </label>
+            <input type="text" name="" id="login"><br><br>
+            <label for="Password">Password: </label>
+            <input type="password" name="" id="pass"><br><br>
+            <button type="submit" value="Submit your data">Submit</button>
+            <button type="reset" value="Reset your data">Reset</button>
+        </form>
+    </div>
+    
+</body>
+</html>
